@@ -6,7 +6,7 @@
 /*   By: seli <seli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 22:12:45 by seli              #+#    #+#             */
-/*   Updated: 2018/10/04 23:10:23 by seli             ###   ########.fr       */
+/*   Updated: 2018/10/04 23:19:45 by seli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,13 @@ int		ft_print_tail(int size, int offset, char *str)
 	fd = open(str, O_RDONLY);
 	if (fd < 0 || size < 0 || offset < 0)
 		return (fd < 0 ? ft_error_handle(str) : -1);
-	while ((result = read(fd, buf, BUF_SIZE)))
-		buf[result] = 0;
-	lseek(fd, -offset, SEEK_END);
 	ft_print_file_name(str);
+	if (offset < size)
+	{
+		while ((result = read(fd, buf, BUF_SIZE)))
+			buf[result] = 0;
+		lseek(fd, -offset, SEEK_END);
+	}
 	while ((result = read(fd, buf, BUF_SIZE)))
 	{
 		buf[result] = 0;
@@ -67,7 +70,7 @@ int		ft_size(char *str)
 		ft_putstr(STDERR_FILENO, ERROR_WHEN_CLOSE);
 		return (-1);
 	}
-	return (result);
+	return (size);
 }
 
 int		ft_offset(char *str)
