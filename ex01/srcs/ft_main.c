@@ -6,7 +6,7 @@
 /*   By: seli <seli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 19:14:43 by seli              #+#    #+#             */
-/*   Updated: 2018/10/04 21:37:06 by seli             ###   ########.fr       */
+/*   Updated: 2018/10/04 22:10:06 by seli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int		main(int ac, char **av)
 	int	i;
 	int	err;
 
+	err = 0;
 	if (ac < 1)
 		return (1);
 	if (ac == 1)
@@ -27,7 +28,7 @@ int		main(int ac, char **av)
 		err = ft_open_file(av[i]) == EXIT_ERROR ? EXIT_ERROR : err;
 		i++;
 	}
-	return (0);
+	return (err);
 }
 
 int		ft_open_file(char *str)
