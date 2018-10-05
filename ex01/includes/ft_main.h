@@ -6,7 +6,7 @@
 /*   By: seli <seli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 16:02:05 by seli              #+#    #+#             */
-/*   Updated: 2018/10/04 19:52:44 by seli             ###   ########.fr       */
+/*   Updated: 2018/10/04 21:35:14 by seli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int		main(int ac, char **av);
 int		ft_open_file(char *str);
-int		ft_error_handle(char *str);
+int		ft_error_handle(char *str, int dir);
 int		ft_repl(void);
 
 #endif
