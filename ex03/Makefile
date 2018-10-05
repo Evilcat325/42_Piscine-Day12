@@ -6,7 +6,7 @@
 #    By: seli <seli@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/04 23:27:04 by seli              #+#    #+#              #
-#    Updated: 2018/10/04 23:27:25 by seli             ###   ########.fr        #
+#    Updated: 2018/10/04 23:36:19 by seli             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = ft_hexdump
 all: $(NAME)
 
 $(NAME):
-	which hexdump | xargs -I{} cp {} .
+	which hexdump | xargs -I{} cp {} $(NAME)
 
 clean:
 	rm -f $(NAME)
